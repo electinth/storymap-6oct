@@ -1,4 +1,6 @@
-/* *,
+@import url(webfonts/stylesheet.css);
+
+*,
 *::before,
 *::after {
   margin: 0;
@@ -7,13 +9,21 @@
 }
 
 body {
-  font: normal 14px 'Athiti', sans-serif;
+  font: normal 10px 'Noto Sans Thai UI', 'Noto Sans', sans-serif;
   color: black;
   overflow-x: hidden;
-  padding-bottom: 50px;
-  background-color: gainsboro;
+  background-color: white;
+}
+header .fab {
+  font-size: 1.6em;
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: dimgray;
-} */
+  color: black;
+}
+
+h2 {
+  font-family: 'The Matter', serif;
+  font-weight: 600;
+  font-size: 2em;
+}
