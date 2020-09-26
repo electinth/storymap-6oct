@@ -62,12 +62,11 @@ d3.csv("data.csv").then(data => {
       ));
     }
   }
-  // console.log(storymap_data)
 
   let storymap_options = {};
 
   let storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
   window.onresize = function(event) {
-    storymap.updateDisplay(); // this isn't automatic
+    storymap.updateDisplay();
   }
 });
