@@ -58,7 +58,7 @@ d3.csv("data.csv").then(data => {
         // `<p>${data[i].Description}</p><span class='vco-note'>ที่มา: <a href='${data[i].Reference}'>${data[i].Reference}</a></span>`,
         data[i].Location,
         latlong_known,
-        `images/${data[i].Photo}`
+        isNaN(data[i].Photo) ? "" : `images/${data[i].Photo}.jpg`
       ));
     }
   }
