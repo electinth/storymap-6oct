@@ -43,7 +43,7 @@ a:link, a:visited, a:hover, a:active {
 }
 img.vco-media-item.vco-media-image.vco-media-shadow {
   max-width: 400px !important;
-  max-height: none !important;
+  max-height: 400px !important;
 }
 
 h2 {
@@ -52,19 +52,20 @@ h2 {
 }
 .vco-text h2.vco-headline-title, .vco-text h2.vco-headline {
   font-size: 28px;
-  line-height: 1em;
+  line-height: 34px;
   color: #EAFFD5;
 }
 h2.vco-headline p {
-  margin: 21px 0;
+  margin-top: 21px;
 }
 h2.vco-headline p small {
   font-size: 18px;
   color: #EF364C;
-  margin: 30px 0;
 }
 .vco-text-content {
   font: normal 14px 'Bai Jamjuree', sans-serif;
+  line-height: 20px;
+  margin-top: 21px;
 }
 .vco-text p {
   color: #EAFFD5;

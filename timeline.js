@@ -27,8 +27,8 @@ d3.csv("data.csv").then(data => {
         {
           "type": "overview",
           "text": {
-            "headline": "เกิดอะไร ที่ไหน<br />ใน 6 ตุลา 19<small>Oct 6 Story Map</small>",
-            "text": ""
+            "headline": "เกิดอะไร ที่ไหน<br />ใน 6 ตุลา 19<br />Oct 6 Story Map",
+            "text": "ทบทวนเหตุการณ์ 6 ตุลา 19 ผ่านพื้นที่จริง"
           },
           "media": {
             "url": "",
