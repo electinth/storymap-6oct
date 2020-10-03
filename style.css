@@ -24,7 +24,11 @@ header .fab {
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: black;
+  color: #EAFFD5;
+}
+.vco-storymap a:hover {
+  color: #EAFFD5;
+  text-decoration: none;
 }
 
 .space {
@@ -40,11 +44,19 @@ a:link, a:visited, a:hover, a:active {
 }
 .vco-layout-landscape .vco-storyslider .vco-slider-background {
   /* display: none; */
-  background-image: linear-gradient(to right, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.85) 15%)
+  background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 80.5%, rgba(0, 0, 0, 0) 98.44%);
 }
 img.vco-media-item.vco-media-image.vco-media-shadow {
   max-width: 400px !important;
   max-height: 400px !important;
+}
+
+.note {
+  font-size: 12px;
+  color: #EAFFD5;
+  border-top: solid 1px #EAFFD5;
+  margin-top: 20px;
+  padding: 5px 0;
 }
 
 h2 {

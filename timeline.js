@@ -21,14 +21,14 @@ d3.csv("data.csv").then(data => {
   let storymap_data = {
     storymap: {
       font_css: "",
-      map_type: "mapbox:://styles/sychonato/ckfrytb9i1mm319t8ftprzdcj",
+      map_type: "mapbox:://styles/sychonato/ckfrytb9i1mm319t8ftprzdcj", // NOTE: double colons to circumvent StoryMap library's bug
       map_background_color: "#000",
       slides: [
         {
           "type": "overview",
           "text": {
             "headline": "เกิดอะไร ที่ไหน<br />ใน 6 ตุลา 19<p><small>Oct 6 Story Map</small></p>",
-            "text": "ทบทวนเหตุการณ์ 6 ตุลา 19 ผ่านพื้นที่จริง"
+            "text": "ทบทวนเหตุการณ์ 6 ตุลา 19 ผ่านพื้นที่จริง<div class='note'>ข้อความและภาพทั้งหมดที่ปรากฎในงานนี้ ELECT ได้นำมาจากเว็บไซต์ “บันทึก 6 ตุลา” (<a href='www.doct6.com'>www.doct6.com</a>) โดยเว็บไซต์ “บันทึก 6 ตุลา” ไม่ได้อ้างว่าตนเป็นเจ้าของลิขสิทธิ์</div>"
           },
           "media": {
             "url": "",
