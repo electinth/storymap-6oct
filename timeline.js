@@ -21,11 +21,13 @@ d3.csv("data.csv").then(data => {
   let storymap_data = {
     storymap: {
       font_css: "",
+      map_type: "mapbox:://styles/sychonato/ckfrytb9i1mm319t8ftprzdcj",
+      map_background_color: "#000",
       slides: [
         {
           "type": "overview",
           "text": {
-            "headline": "ไทมไลน์ 6 ตุลา<small>Thammasat University Massacre Timeline</small>",
+            "headline": "เกิดอะไร ที่ไหน<br />ใน 6 ตุลา 19<small>Oct 6 Story Map</small>",
             "text": ""
           },
           "media": {
@@ -46,7 +48,7 @@ d3.csv("data.csv").then(data => {
       .toLocaleDateString("th-u-ca-buddhist", {"year":"numeric","month":"short","day":"numeric"});
 
     let time_split = data[i].Time.split('.');
-    let time_string = (data[i].Time != "unknown") ? ` เวลา ${time_split[0]}:${time_split[1]} น.` : '';
+    let time_string = (data[i].Time != "unknown") ? `<span class="space"></span>|<span class="space"></span>เวลา ${time_split[0]}:${time_split[1]} น.` : '';
     
     if (data[i].Location != "unknown") {
       latlong_known = data[i].latlong.split(", ");
@@ -63,7 +65,9 @@ d3.csv("data.csv").then(data => {
     }
   }
 
-  let storymap_options = {};
+  let storymap_options = {
+    map_access_token: 'pk.eyJ1Ijoic3ljaG9uYXRvIiwiYSI6ImNqeHU1cmo5aTExcjEzY21ibnlvdmcwcnkifQ.-DFxiUO5M6B-p2cZQJJ9ng'
+  };
 
   let storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
   window.onresize = function(event) {

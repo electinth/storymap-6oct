@@ -9,7 +9,7 @@
 }
 
 body {
-  font: normal 10px 'Noto Sans Thai UI', 'Noto Sans', sans-serif;
+  font: normal 10px 'Bai Jamjuree', sans-serif;
   color: black;
   overflow-x: hidden;
   background-color: white;
@@ -17,13 +17,64 @@ body {
 header .fab {
   font-size: 1.6em;
 }
+.site-header .navbar .navbar-brand img {
+  max-height: 30px;
+  width: auto;
+  height: auto;
+}
 
 a:link, a:visited, a:hover, a:active {
   color: black;
 }
 
+.space {
+  display: inline-block;
+  width: 20px;
+}
+
+#mapdiv {
+  height: calc(100% - 100px);
+}
+.vco-slide-content-container .vco-slide-content {
+  width: 400px !important;
+}
+.vco-layout-landscape .vco-storyslider .vco-slider-background {
+  display: none;
+}
+img.vco-media-item.vco-media-image.vco-media-shadow {
+  max-width: 400px !important;
+  max-height: none !important;
+}
+
 h2 {
   font-family: 'The Matter', serif;
   font-weight: 600;
-  font-size: 2em;
+}
+.vco-text h2.vco-headline-title, .vco-text h2.vco-headline {
+  font-size: 28px;
+  line-height: 1em;
+  color: #EAFFD5;
+}
+h2.vco-headline p {
+  margin: 21px 0;
+}
+h2.vco-headline p small {
+  font-size: 18px;
+  color: #EF364C;
+  margin: 30px 0;
+}
+.vco-text-content {
+  font: normal 14px 'Bai Jamjuree', sans-serif;
+}
+.vco-text p {
+  color: #EAFFD5;
+}
+.vco-media .vco-media-content-container .vco-media-content {
+  text-align: left;
+}
+
+@media only screen and (max-width: 666px) {
+  .vco-layout-portrait .vco-storyslider {
+    background-color: black;
+  }
 }
