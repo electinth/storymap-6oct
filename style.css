@@ -39,7 +39,8 @@ a:link, a:visited, a:hover, a:active {
   width: 400px !important;
 }
 .vco-layout-landscape .vco-storyslider .vco-slider-background {
-  display: none;
+  /* display: none; */
+  background-image: linear-gradient(to right, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.85) 15%)
 }
 img.vco-media-item.vco-media-image.vco-media-shadow {
   max-width: 400px !important;
