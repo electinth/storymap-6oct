@@ -41,6 +41,7 @@ d3.csv("data.csv").then(data => {
   };
   
   let latlong_known;
+  let latlong_last;
 
   for (let i = 0; i < data.length; i++) {
     let date_split = data[i].Date.split('.');
@@ -50,19 +51,22 @@ d3.csv("data.csv").then(data => {
     let time_split = data[i].Time.split('.');
     let time_string = (data[i].Time != "unknown") ? `<span class="space"></span>|<span class="space"></span>เวลา ${time_split[0]}:${time_split[1]} น.` : '';
     
-    if (data[i].Location != "unknown") {
+    if (data[i].Location === "unknown") {
+      latlong_known = latlong_last;
+    } else {
       latlong_known = data[i].latlong.split(", ");
-
-      storymap_data.storymap.slides.push(make_slide(
-        `${date_string}${time_string}`,
-        data[i].Title,
-        `<p>${data[i].Description}</p>`,
-        // `<p>${data[i].Description}</p><span class='vco-note'>ที่มา: <a href='${data[i].Reference}'>${data[i].Reference}</a></span>`,
-        data[i].Location,
-        latlong_known,
-        isNaN(data[i].Photo) ? "" : `images/${data[i].Photo}.jpg`
-      ));
+      latlong_last = latlong_known;
     }
+
+    storymap_data.storymap.slides.push(make_slide(
+      `${date_string}${time_string}`,
+      data[i].Title,
+      `<p>${data[i].Description}</p>`,
+      // `<p>${data[i].Description}</p><span class='vco-note'>ที่มา: <a href='${data[i].Reference}'>${data[i].Reference}</a></span>`,
+      data[i].Location,
+      latlong_known,
+      isNaN(data[i].Photo) ? "" : `images/${data[i].Photo}.jpg`
+    ));
   }
 
   let storymap_options = {
