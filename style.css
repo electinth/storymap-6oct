@@ -50,6 +50,9 @@ img.vco-media-item.vco-media-image.vco-media-shadow {
   max-width: 400px !important;
   max-height: 400px !important;
 }
+.vco-media-item.vco-media-iframe {
+  max-height: 224px !important;
+}
 
 .note {
   font-size: 12px;

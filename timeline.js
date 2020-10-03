@@ -1,4 +1,10 @@
-let make_slide = (datetime, headline, text, location, latlong, path) => ({
+const jux_iframes = {
+  7: '<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=8f9076aa-059f-11eb-bf88-a15b6c7adf9a"></iframe>',
+  11: '<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=0f3f022c-05a0-11eb-bf88-a15b6c7adf9a"></iframe>',
+  13: '<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=2f896bb2-05a0-11eb-bf88-a15b6c7adf9a"></iframe>'
+}
+
+let make_slide = (datetime, headline, text, location, latlong, path, caption) => ({
   "text": {
     "headline": `${headline}<p><small>${datetime}</small></p>`,
     "text": text
@@ -13,7 +19,7 @@ let make_slide = (datetime, headline, text, location, latlong, path) => ({
   "media": {
     "url": path,
     "credit": "",
-    "caption": ""
+    "caption": caption
   }
 });
 
@@ -65,7 +71,9 @@ d3.csv("data.csv").then(data => {
       // `<p>${data[i].Description}</p><span class='vco-note'>ที่มา: <a href='${data[i].Reference}'>${data[i].Reference}</a></span>`,
       data[i].Location,
       latlong_known,
-      isNaN(data[i].Photo) ? "" : `images/${data[i].Photo}.jpg`
+      isNaN(data[i].Photo) ? (data[i].Photo === 'j' ? jux_iframes[+data[i].Juxtaposed] : "") : `images/${data[i].Photo}.jpg`,
+      ""
+      // data[i].photo_script
     ));
   }
 
