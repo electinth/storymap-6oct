@@ -1,9 +1,3 @@
-const jux_iframes = {
-  7: '<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=8f9076aa-059f-11eb-bf88-a15b6c7adf9a"></iframe>',
-  11: '<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=0f3f022c-05a0-11eb-bf88-a15b6c7adf9a"></iframe>',
-  13: '<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=2f896bb2-05a0-11eb-bf88-a15b6c7adf9a"></iframe>'
-}
-
 let make_slide = (datetime, headline, text, location, latlong, path, caption) => ({
   "text": {
     "headline": `${headline}<p><small>${datetime}</small></p>`,
@@ -34,7 +28,7 @@ d3.csv("data.csv").then(data => {
           "type": "overview",
           "text": {
             "headline": "เกิดอะไร ที่ไหน<br />ใน 6 ตุลา 19<p><small>Oct 6 Story Map</small></p>",
-            "text": "ทบทวนเหตุการณ์ 6 ตุลา 19 ผ่านพื้นที่จริง<div class='note'>ข้อความและภาพทั้งหมดที่ปรากฎในงานนี้ ELECT ได้นำมาจากเว็บไซต์ “บันทึก 6 ตุลา” (<a href='www.doct6.com'>www.doct6.com</a>) โดยเว็บไซต์ “บันทึก 6 ตุลา” ไม่ได้อ้างว่าตนเป็นเจ้าของลิขสิทธิ์</div>"
+            "text": "ทบทวนเหตุการณ์ 6 ตุลา 19 ผ่านพื้นที่จริง<div class='note'>ข้อความและภาพทั้งหมดที่ปรากฎในงานนี้ ELECT ได้นำมาจากเว็บไซต์ “บันทึก 6 ตุลา” (<a href='www.doct6.com'>www.doct6.com</a>) โดยเว็บไซต์ “บันทึก 6 ตุลา” ไม่ได้อ้างว่าตนเป็นเจ้าของลิขสิทธิ์แต่อย่างใด</div>"
           },
           "media": {
             "url": "",
@@ -71,7 +65,11 @@ d3.csv("data.csv").then(data => {
       // `<p>${data[i].Description}</p><span class='vco-note'>ที่มา: <a href='${data[i].Reference}'>${data[i].Reference}</a></span>`,
       data[i].Location,
       latlong_known,
-      isNaN(data[i].Photo) ? (data[i].Photo === 'j' ? jux_iframes[+data[i].Juxtaposed] : "") : `images/${data[i].Photo}.jpg`,
+      isNaN(data[i].Photo)
+        ? (data[i].Photo === 'j'
+          ? `<iframe frameborder="0" class="juxtapose" width="100%" height="281" src="${data[i].Juxtaposed}.html"></iframe>`
+          : "")
+        : `images/${data[i].Photo}.jpg`,
       ""
       // data[i].photo_script
     ));
