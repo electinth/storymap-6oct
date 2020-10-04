@@ -78,11 +78,25 @@ d3.csv("data.csv").then(data => {
   }
 
   let storymap_options = {
-    map_access_token: 'pk.eyJ1Ijoic3ljaG9uYXRvIiwiYSI6ImNqeHU1cmo5aTExcjEzY21ibnlvdmcwcnkifQ.-DFxiUO5M6B-p2cZQJJ9ng'
+    map_access_token: 'pk.eyJ1Ijoic3ljaG9uYXRvIiwiYSI6ImNqeHU1cmo5aTExcjEzY21ibnlvdmcwcnkifQ.-DFxiUO5M6B-p2cZQJJ9ng',
+    line_color: '#EF364C',
+    line_color_inactive: '#EF364C', 
+    line_weight: 2,
+    line_opacity: 1,
+    line_dash: "2 6",
   };
 
   let storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
   window.onresize = function(event) {
     storymap.updateDisplay();
   }
+
+  d3.select('.vco-menubar').selectAll('.vco-menubar-button')
+    .text((d, i) => {
+      switch(i) {
+        case 0: return 'ดูภาพรวมแผนที่';
+        case 1: return 'กลับไปจุดเริ่มต้น';
+        default: return '';
+      }
+    })
 });

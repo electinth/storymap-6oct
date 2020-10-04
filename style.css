@@ -36,9 +36,34 @@ a:link, a:visited, a:hover, a:active {
   width: 20px;
 }
 
+.vco-menubar-button {
+  font: normal 12px 'Bai Jamjuree', sans-serif;
+}
+.vco-menubar-button:hover {
+  background: #EF364C;
+  color: #EAFFD5;
+}
+
 #mapdiv {
   height: calc(100% - 100px);
 }
+.vco-map .vco-mapmarker, .vco-map .vco-mapmarker-active {
+  font-family: "Font Awesome 5 Free";
+}
+.vco-map .vco-mapmarker {
+  color: #EAFFD5;
+}
+.vco-map .vco-mapmarker-active {
+  color: #EF364C;
+}
+.vco-map .vco-mapmarker:before, .vco-map .vco-mapmarker-active:before {
+  content: "\f3c5";
+  font-size: 58px;
+}
+.vco-map .vco-mapmarker-icon:after, .vco-map .vco-mapmarker-active.vco-mapmarker-icon:after {
+  display: none;
+}
+
 .vco-slide-content-container .vco-slide-content {
   width: 400px !important;
 }
