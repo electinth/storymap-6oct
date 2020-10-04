@@ -49,6 +49,7 @@ a:link, a:visited, a:hover, a:active {
 }
 .vco-map .vco-mapmarker, .vco-map .vco-mapmarker-active {
   font-family: "Font Awesome 5 Free";
+  font-weight: bold;
 }
 .vco-map .vco-mapmarker {
   color: #EAFFD5;
