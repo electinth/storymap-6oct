@@ -120,4 +120,11 @@ h2.vco-headline p small {
   .vco-layout-portrait .vco-storyslider {
     background-color: black;
   }
+  .vco-slide-content-container .vco-slide-content {
+    width: calc(100% - 90px) !important;
+  }
+  img.vco-media-item.vco-media-image.vco-media-shadow {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
 }
